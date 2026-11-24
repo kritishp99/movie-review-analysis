@@ -1,10 +1,10 @@
-# Movie Review Sentiment Analysis Using TensorFlow
+# Movie Review Sentiment Analysis
 
 ## Project Overview
 
-This project uses **Deep Learning and TensorFlow** to perform text classification on movie reviews. It analyzes the text of a movie review and predicts whether its sentiment is **Positive or Negative**.
+This project uses Deep Learning and Natural Language Processing (NLP) to classify movie reviews as **Positive** or **Negative**.
 
-The project uses the IMDB Movie Reviews dataset and a Neural Network built using TensorFlow/Keras.
+A neural network model is trained using the IMDB movie review dataset to understand the sentiment expressed in text reviews.
 
 ## Technologies Used
 
@@ -12,51 +12,45 @@ The project uses the IMDB Movie Reviews dataset and a Neural Network built using
 - TensorFlow
 - Keras
 - NumPy
-- Pandas
 - Matplotlib
-- Scikit-learn
 - Jupyter Notebook
 
 ## Dataset
 
-The project uses the **IMDB Movie Reviews Dataset** available through TensorFlow/Keras.
+The project uses the **IMDB Movie Reviews Dataset**, which contains:
 
 - 25,000 training reviews
 - 25,000 testing reviews
-- Binary sentiment labels:
-  - 0 – Negative
-  - 1 – Positive
+- Binary sentiment labels: Positive and Negative
+
+The dataset is limited to the 10,000 most frequent words.
 
 ## Model Architecture
 
-The neural network consists of the following layers:
+The project uses a Sequential Neural Network with the following layers:
 
 1. **Embedding Layer** – Converts words into dense vector representations.
-2. **Global Average Pooling 1D** – Reduces the sequence into a fixed-size representation.
-3. **Dense Layer (16 neurons, ReLU)** – Learns patterns from the text.
-4. **Output Layer (1 neuron, Sigmoid)** – Predicts positive or negative sentiment.
+2. **Global Average Pooling Layer** – Reduces the sequence into a fixed-size representation.
+3. **Dense Layer** – Learns patterns from the review representations using ReLU activation.
+4. **Output Layer** – Uses Sigmoid activation to predict positive or negative sentiment.
 
 ### Model Configuration
 
-| Parameter | Value |
-|---|---|
-| Optimizer | Adam |
-| Loss Function | Binary Crossentropy |
-| Batch Size | 512 |
-| Epochs | 10 |
-| Maximum Sequence Length | 500 |
-| Vocabulary Size | 10,000 |
+- Optimizer: Adam
+- Loss Function: Binary Crossentropy
+- Epochs: 10
+- Batch Size: 512
+- Maximum Review Length: 500
+- Vocabulary Size: 10,000
 
-## Model Performance
+## Results
 
-The trained model achieved the following result on the test dataset:
+The trained model achieved approximately **79% test accuracy**.
 
-| Metric | Result |
-|---|---:|
-| Test Accuracy | **79%** |
-| Epochs | 10 |
-
-The model predicts whether a given movie review expresses positive or negative sentiment.
+The project also includes:
+- Training and validation accuracy visualization
+- Training and validation loss visualization
+- Predictions on custom movie reviews
 
 ## Project Structure
 
@@ -69,64 +63,58 @@ movie-review-analysis/
 └── .gitignore
 ```
 
-## Installation and Setup
+## Installation and Usage
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/movie-review-analysis.git
+git clone https://github.com/kritishp99/movie-review-analysis.git
 ```
 
-### 2. Navigate to the project folder
+### 2. Navigate to the Project Directory
 
 ```bash
 cd movie-review-analysis
 ```
 
-### 3. Install the required libraries
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Run the notebook
+### 4. Run the Notebook
 
-Open the notebook using Jupyter Notebook or Google Colab and execute the cells in order.
+Open the Jupyter Notebook:
 
-The IMDB dataset will be downloaded through TensorFlow/Keras when needed.
+```bash
+jupyter notebook
+```
+
+Run the cells in `Movie_Review_Sentiment_Analysis.ipynb` to train the model and test predictions.
 
 ## Custom Review Prediction
 
-The project includes a prediction function that accepts a movie review and classifies its sentiment.
+The project includes a prediction function that allows users to enter their own movie reviews and classify them as positive or negative.
 
 Example:
 
 ```python
-predict_review("This movie was wonderful and entertaining!")
+predict_sentiment("The movie was amazing and I really enjoyed it!")
 ```
-
-Possible output:
-
-```text
-Predicted sentiment: Positive
-```
-
-The prediction depends on the trained model.
 
 ## Future Improvements
 
 - Improve model accuracy through hyperparameter tuning.
-- Experiment with different neural network architectures.
-- Use LSTM or GRU layers for sequence-based learning.
-- Build a simple web application for sentiment prediction.
-- Improve text preprocessing and prediction performance.
+- Experiment with LSTM and GRU architectures.
+- Use pre-trained word embeddings.
+- Deploy the model using a web application.
 
 ## Conclusion
 
-This project demonstrates how Deep Learning and Natural Language Processing can be used for sentiment analysis. Using TensorFlow and the IMDB dataset, the neural network learns to classify movie reviews into positive and negative categories.
+This project demonstrates how Deep Learning and NLP can be used for sentiment analysis. It provides practical experience in text preprocessing, neural network development, model evaluation, and sentiment prediction.
 
 ---
 
-**Project:** Movie Review Sentiment Analysis  
-**Framework:** TensorFlow / Keras  
-**Language:** Python
+**GitHub Repository:**  
+https://github.com/kritishp99/movie-review-analysis
